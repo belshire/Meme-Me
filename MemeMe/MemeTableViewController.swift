@@ -16,12 +16,12 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         super.viewWillAppear(animated)
         
         let object = UIApplication.sharedApplication().delegate
-        let appDelegate = object as AppDelegate
+        let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MemeCell") as MemeTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("MemeCell") as! MemeTableViewCell
         let meme = self.memes[indexPath.row]
         
         // Set the name and image
@@ -35,7 +35,7 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         //Grab the DetailVC from Storyboard
         let object:AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailVC")!
         
-        let detailVC = object as MemeDetailViewController
+        let detailVC = object as! MemeDetailViewController
         //Populate view controller with data from the selected item
         detailVC.meme = self.memes[indexPath.row]
         

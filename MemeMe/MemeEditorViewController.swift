@@ -73,7 +73,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
         // Append meme to shared data array
         let object = UIApplication.sharedApplication().delegate
-        let appDelegate = object as AppDelegate
+        let appDelegate = object as! AppDelegate
         appDelegate.memes.append(meme)
     }
     
@@ -177,7 +177,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as NSValue
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
         
         return keyboardSize.CGRectValue().height
     }

@@ -18,14 +18,14 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
         super.viewWillAppear(animated)
         
         let object = UIApplication.sharedApplication().delegate
-        let appDelegate = object as AppDelegate
+        let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
     
         self.collectionView.reloadData()        
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CustomMemeCell", forIndexPath: indexPath) as MemeCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CustomMemeCell", forIndexPath: indexPath) as! MemeCollectionViewCell
         let meme = memes[indexPath.item]
         cell.memeImageView.image = meme.memedImage!
         
@@ -42,7 +42,7 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
         //Grab the DetailVC from Storyboard
         let object:AnyObject = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailVC")!
         
-        let detailVC = object as MemeDetailViewController
+        let detailVC = object as! MemeDetailViewController
         //Populate view controller with data from the selected item
         detailVC.meme = self.memes[indexPath.row]
         
