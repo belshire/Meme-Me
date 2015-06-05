@@ -21,7 +21,7 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
         let appDelegate = object as! AppDelegate
         memes = appDelegate.memes
     
-        self.collectionView.reloadData()        
+        collectionView.reloadData()        
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

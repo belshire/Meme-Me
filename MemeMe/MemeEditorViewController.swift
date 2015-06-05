@@ -18,7 +18,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
-    var generatedImage : UIImage?
+    var generatedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -165,7 +165,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             if bottomTextField.text == "" {
                 bottomTextField.text = "BOTTOM"
             }
-            self.view.frame.origin.y += getKeyboardHeight(notification)
+            self.view.frame.origin.y = 0
         }
         
         if topTextField.isFirstResponder() {
